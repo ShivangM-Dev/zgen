@@ -93,9 +93,11 @@ export default function Navbar() {
         {/* Desktop Actions */}
         <div className="hidden md:flex items-center gap-4">
           {/* <ModeToggle /> */}
+          <Link href="/contact" className="text-foreground/80 hover:text-foreground transition-colors">
           <Button className="bg-[#F5A623] hover:bg-[#E69512] text-white">
             Get a Quote
           </Button>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}

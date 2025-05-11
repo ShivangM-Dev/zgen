@@ -9,6 +9,7 @@ import {
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -300,11 +301,11 @@ return (
               Contact us today to discuss your production needs and discover how Maven Studios
               can help bring your creative vision to life.
             </p>
-            <a href="/contact">
+            <Link href="/contact">
               <Button variant="outline" className="border-[#F5A623] text-[#F5A623] hover:bg-[#F5A623]/10">
                 Get a Quote <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-            </a>
+           </Link>
             
           </div>
         </section>

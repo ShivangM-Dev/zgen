@@ -27,12 +27,10 @@ export default function Footer() {
               <a href="https://www.instagram.com/zgenstudio?igsh=MXd3dmFyams2ZDB6cw==" className="text-muted-foreground hover:text-foreground transition-colors">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="https://www.linkedin.com/company/zgen-studio/" className="text-muted-foreground hover:text-foreground transition-colors">
                 <Linkedin size={20} />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                <Github size={20} />
-              </a>
+        
             </div>
           </div>
           
@@ -85,11 +83,7 @@ export default function Footer() {
                   Testimonials
                 </Link>
               </li>
-              <li>
-                <Link href="/blog" className="text-muted-foreground hover:text-foreground transition-colors">
-                  Blog
-                </Link>
-              </li>
+        
               <li>
                 <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
                   Contact

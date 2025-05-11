@@ -2,12 +2,13 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import projectsData from './data.json';
 
-const categories = ['All', 'Hyper Casual Games', 'VR Experiences', 'Digital Simulations', '3D Content'];
+const categories = ['All', 'Mobile Game', 'VR Experiences', '3D Interactive'];
 
 type Project = {
   id: number;
@@ -15,6 +16,7 @@ type Project = {
   category: string;
   description: string;
   image: string;
+  link: string;
   technologies: string[];
 };
 
@@ -68,10 +70,16 @@ export default function PortfolioPage() {
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <Button variant="ghost" className="text-white border border-white hover:bg-white/20">
-                    View Project
-                  </Button>
+                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center cursor-pointer">
+                  <Link href={project.link} passHref>
+                    <Button
+                      asChild
+                      variant="ghost"
+                      className="text-white border border-white hover:bg-white/20 cursor-pointer"
+                    >
+                      <span>View Project</span>
+                    </Button>
+                  </Link>
                 </div>
               </div>
 

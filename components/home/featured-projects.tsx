@@ -14,10 +14,10 @@ gsap.registerPlugin(ScrollTrigger);
 const projects = [
   {
     id: 1,
-    title: 'Cosmic Explorers',
+    title: 'Doctor Kitty!',
     category: 'Mobile Game',
     description: 'A space exploration adventure game with stunning visuals and immersive gameplay.',
-    imageUrl: 'https://images.pexels.com/photos/2387793/pexels-photo-2387793.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    imageUrl: '/img/gameImg2.png',
     link: '/portfolio',
   },
   {
@@ -25,7 +25,7 @@ const projects = [
     title: 'Virtual College Tour',
     category: 'VR Experience',
     description: 'A virtual reality tour showcasing historical artifacts with interactive elements.',
-    imageUrl: 'https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    imageUrl: '/img/tour/img1.jpg',
     link: '/portfolio',
   },
   {
@@ -33,15 +33,15 @@ const projects = [
     title: "Dip 'n Dice",
     category: 'Web Game',
     description: 'A high-octane racing game set in futuristic cityscapes with realistic physics.',
-    imageUrl: 'https://images.pexels.com/photos/2007647/pexels-photo-2007647.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    imageUrl: '/img/gameImage1.png',
     link: '/portfolio',
   },
   {
     id: 4,
-    title: 'Digital Campus Tour',
+    title: 'Vidya Quest',
     category: '3D Interactive',
     description: 'Interactive 3D campus tour for universities with customizable paths and information points.',
-    imageUrl: 'https://images.pexels.com/photos/3165335/pexels-photo-3165335.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    imageUrl: '/img/vr/vr1.png',
     link: '/portfolio',
   },
 ];
