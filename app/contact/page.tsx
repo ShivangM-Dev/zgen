@@ -1,12 +1,15 @@
-"use client";
+'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import emailjs from '@emailjs/browser';
+
 import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
+
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -25,7 +28,7 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email Us',
-    details: ' info@zgenstudio.com',
+    details: 'info@zgenstudio.com',
   },
   {
     icon: Clock,
@@ -35,17 +38,12 @@ const contactInfo = [
 ];
 
 export default function ContactPage() {
-  const sectionRef = useRef<HTMLDivElement>(null);
-  
+  const formRef = useRef<HTMLFormElement>(null);
+
   useEffect(() => {
-    if (!sectionRef.current) return;
-    
     gsap.fromTo(
       '.contact-card',
-      { 
-        opacity: 0,
-        y: 50
-      },
+      { opacity: 0, y: 50 },
       {
         opacity: 1,
         y: 0,
@@ -54,10 +52,30 @@ export default function ContactPage() {
         scrollTrigger: {
           trigger: '.contact-card',
           start: 'top 80%',
-        }
+        },
       }
     );
   }, []);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (!formRef.current) return;
+
+    try {
+      await emailjs.sendForm(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        formRef.current,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+      alert('Message sent successfully!');
+      formRef.current.reset();
+    } catch (err) {
+      console.error(err);
+      alert('Failed to send message. Please try again.');
+    }
+  };
 
   return (
     <div className="min-h-screen pt-24 pb-16">
@@ -72,35 +90,38 @@ export default function ContactPage() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* FORM */}
           <div className="lg:col-span-2">
             <Card className="contact-card">
               <CardContent className="p-8">
-                <form className="space-y-6">
+                <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-sm font-medium">Name</label>
-                      <Input placeholder="Your name" />
+                      <Input name="user_name" placeholder="Your name" required />
                     </div>
                     <div className="space-y-2">
                       <label className="text-sm font-medium">Email</label>
-                      <Input type="email" placeholder="your@email.com" />
+                      <Input name="user_email" type="email" placeholder="your@email.com" required />
                     </div>
                   </div>
-                  
+
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Subject</label>
-                    <Input placeholder="Project discussion" />
+                    <Input name="subject" placeholder="Project discussion" required />
                   </div>
-                  
+
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Message</label>
-                    <Textarea 
+                    <Textarea
+                      name="message"
                       placeholder="Tell us about your project..."
                       className="min-h-[150px]"
+                      required
                     />
                   </div>
-                  
-                  <Button className="w-full bg-[#F5A623] hover:bg-[#E69512] text-white">
+
+                  <Button type="submit" className="w-full bg-[#F5A623] hover:bg-[#E69512] text-white">
                     Send Message
                   </Button>
                 </form>
@@ -108,13 +129,14 @@ export default function ContactPage() {
             </Card>
           </div>
 
+          {/* CONTACT INFO */}
           <div className="space-y-6">
             {contactInfo.map((info, index) => {
               const Icon = info.icon;
               return (
                 <Card key={index} className="contact-card">
                   <CardContent className="p-6 flex items-start space-x-4">
-                    <div className="w-12 h-12 rounded-full bg-[#F5A623]/10 flex items-center justify-center flex-shrink-0">
+                    <div className="w-12 h-12 rounded-full bg-[#F5A623]/10 flex items-center justify-center">
                       <Icon className="h-6 w-6 text-[#F5A623]" />
                     </div>
                     <div>

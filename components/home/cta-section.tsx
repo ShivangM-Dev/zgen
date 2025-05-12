@@ -51,9 +51,12 @@ export default function CTASection() {
             Let's create immersive digital experiences that engage your audience and elevate your brand. Contact us today to discuss your project.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/contact">
             <Button className="bg-[#F5A623] hover:bg-[#E69512] text-white px-8 py-6 h-auto text-lg">
               Get in Touch
             </Button>
+            </Link>
+            {/* Explore Our Work Button */}
             <Link href="/portfolio">
               <Button variant="outline" className="border-[#F5A623] text-[#F5A623] hover:bg-[#F5A623]/10 px-8 py-6 h-auto text-lg">
                 Explore Our Work <ArrowRight className="ml-2 h-5 w-5" />

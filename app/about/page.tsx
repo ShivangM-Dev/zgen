@@ -104,7 +104,7 @@ export default function AboutUs() {
             { name: "Unity", icon: "/tech/unity.svg" },
             { name: "Unreal", icon: "/tech/unreal.svg" },
             { name: "Blender", icon: "/tech/blender.svg" },
-            { name: "WebXR", icon: "/tech/webxr.svg" },
+            { name: "Virtual Reality", icon: "/tech/vr.png" },
             
             ].map((tech, index) => (
             <div

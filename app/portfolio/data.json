@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Doctor Kitty!",
     "category": "Mobile Game",
-    "description": "A fun and interactive mobile game where children play as a virtual vet treating animals.",
+    "description": "A fun and interactive simulation and business strategy game..",
     "image": "/img/gameImg2.png",
     "technologies": ["Unity", "C#", "iOS", "Android"],
     "link": "https://amandead.itch.io/doctor-kitty"
@@ -14,23 +14,23 @@
     "category": "VR Experiences",
     "description": "An engaging virtual tour of college campuses featuring interactive hotspots and guided narration.",
     "image": "/img/tour/img1.jpg",
-    "technologies": ["Unreal Engine", "VR", "Education"],
+    "technologies": ["Unity", "VR", "Education"],
     "link": "/portfolio"
   },
   {
     "id": 3,
     "title": "Dip 'n Dice",
     "category": "Mobile Game",
-    "description": "A high-octane browser-based racing game set in neon-lit futuristic environments.",
+    "description": "A unique puzzle-strategy game where you control a dice to paint tiles creatively..",
     "image": "/img/gameImage1.png",
-    "technologies": ["Three.js", "JavaScript", "WebGL"],
+    "technologies": ["Unity", "JavaScript", "WebGL"],
     "link": "https://amandead.itch.io/dip-n-dice"
   },
   {
     "id": 4,
     "title": "Vidya Quest",
     "category": "3D Interactive",
-    "description": "A customizable 3D campus experience built for onboarding and orientation programs.",
+    "description": "A 3D VR based learning experience built for enhanced visualization and learning.",
     "image": "/img/vr/vr1.png",
     "technologies": ["Unity", "3D Modeling", "WebXR"],
     "link": "/portfolio"

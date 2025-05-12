@@ -91,20 +91,7 @@ export default function Footer() {
               </li>
             </ul>
           </div>
-          
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Subscribe</h3>
-            <p className="text-muted-foreground mb-4">
-              Subscribe to our newsletter for the latest updates and insights.
-            </p>
-            <div className="flex flex-col space-y-2">
-              <Input type="email" placeholder="Your email" />
-              <Button className="bg-[#F5A623] hover:bg-[#E69512] text-white">
-                Subscribe
-              </Button>
-            </div>
-          </div>
-        </div>
+       </div>
         
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm">
